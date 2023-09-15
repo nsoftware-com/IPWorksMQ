@@ -5,14 +5,14 @@ The provided sample projects offer a concise yet effective demonstration of the 
 IPWorks MQ 2022 libraries for the corresponding edition are required to run these samples.  Free download from: [https://www.nsoftware.com/ipworksmq](https://www.nsoftware.com/ipworksmq)
 
 ## Reference Documentation
-[Java](https://cdn.nsoftware.com/help/ITH/java/)
-[Javascript](https://cdn.nsoftware.com/help/ITH/js/)
-[.NET](https://cdn.nsoftware.com/help/ITH/cs/)
-[Python](https://cdn.nsoftware.com/help/ITH/py/)
-[PHP](https://cdn.nsoftware.com/help/ITH/php/)
-[C++](https://cdn.nsoftware.com/help/ITH/cpp/)
-[macOS](https://cdn.nsoftware.com/help/ITH/mac/)
-[iOS](https://cdn.nsoftware.com/help/ITH/mac/)
+* [Java Edition](https://cdn.nsoftware.com/help/ITH/java/)
+* [Javascript Edition](https://cdn.nsoftware.com/help/ITH/js/)
+* [.NET Edition](https://cdn.nsoftware.com/help/ITH/cs/)
+* [Python Edition](https://cdn.nsoftware.com/help/ITH/py/)
+* [PHP Edition](https://cdn.nsoftware.com/help/ITH/php/)
+* [C++ Edition](https://cdn.nsoftware.com/help/ITH/cpp/)
+* [macOS Edition](https://cdn.nsoftware.com/help/ITH/mac/)
+* [iOS Edition](https://cdn.nsoftware.com/help/ITH/mac/)
 
 ## Sample Projects
 | Sample Project | Description |
