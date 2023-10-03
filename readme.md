@@ -6,11 +6,12 @@ IPWorks MQ 2022 libraries for the corresponding edition are required to run thes
 
 ## Reference Documentation
 * [Java Edition](https://cdn.nsoftware.com/help/ITH/java/)
-* [Javascript Edition](https://cdn.nsoftware.com/help/ITH/js/)
 * [.NET Edition](https://cdn.nsoftware.com/help/ITH/cs/)
+* [JavaScript Edition](https://cdn.nsoftware.com/help/ITH/js/)
 * [Python Edition](https://cdn.nsoftware.com/help/ITH/py/)
 * [PHP Edition](https://cdn.nsoftware.com/help/ITH/php/)
 * [C++ Edition](https://cdn.nsoftware.com/help/ITH/cpp/)
+* [Delphi Edition](https://cdn.nsoftware.com/help/ITH/dlp/)
 * [macOS Edition](https://cdn.nsoftware.com/help/ITH/mac/)
 * [iOS Edition](https://cdn.nsoftware.com/help/ITH/mac/)
 
