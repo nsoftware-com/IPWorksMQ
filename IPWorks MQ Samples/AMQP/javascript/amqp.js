@@ -1,5 +1,5 @@
 /*
- * IPWorks MQ 2022 JavaScript Edition - Sample Project
+ * IPWorks MQ 2024 JavaScript Edition - Sample Project
  *
  * This sample project demonstrates the usage of IPWorks MQ in a 
  * simple, straightforward way. It is not intended to be a complete 
@@ -109,11 +109,11 @@ async function main() {
 	  await amqp.disconnect();
 	  process.exit();
 	} else {
-	  //fetch message
+	  // retrieve message
 	  try {
-		amqp.setFetchTimeout(5); //set timeout to 5 seconds
+		amqp.setRetrieveTimeout(5); //set timeout to 5 seconds
 		console.log("Fetching message...");
-		await amqp.fetchMessage("ReceiverLinkName"); //fetch message using same receiver link
+		await amqp.RetrieveMessage("ReceiverLinkName"); // retrieve message using same receiver link
 	  } catch (error) {
 		console.log(`Error fetching message: ${error.message}`);
 	  }

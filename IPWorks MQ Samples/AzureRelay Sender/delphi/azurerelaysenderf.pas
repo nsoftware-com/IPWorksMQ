@@ -1,5 +1,5 @@
 (*
- * IPWorks MQ 2022 Delphi Edition - Sample Project
+ * IPWorks MQ 2024 Delphi Edition - Sample Project
  *
  * This sample project demonstrates the usage of IPWorks MQ in a 
  * simple, straightforward way. It is not intended to be a complete 
@@ -111,7 +111,7 @@ end;
 procedure TFormAzureRelaySender.SendButtonClick(Sender: TObject);
 begin
   OutputBox.Lines.Add('Sending ' + InputBox.Text + ' to receiver');
-  AzureRelaySender1.DataToSend := InputBox.Text;
+  AzureRelaySender1.SendText(InputBox.Text);
 end;
 
 end.

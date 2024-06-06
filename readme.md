@@ -2,18 +2,18 @@
 The provided sample projects offer a concise yet effective demonstration of the components from IPWorks MQ, showcasing their usage in a straightforward manner. While they are not intended to be complete applications, they serve as valuable illustrations of key features. To enhance clarity, error handling and checks are simplified, allowing users to focus on the core functionality.
 
 ## Requirements
-IPWorks MQ 2022 libraries for the corresponding edition are required to run these samples.  Free download from: [https://www.nsoftware.com/ipworksmq](https://www.nsoftware.com/ipworksmq)
+IPWorks MQ 2024 libraries for the corresponding edition are required to run these samples.  Free download from: [https://www.nsoftware.com/ipworksmq](https://www.nsoftware.com/ipworksmq)
 
 ## Reference Documentation
-* [Java Edition](https://cdn.nsoftware.com/help/ITH/java/)
-* [.NET Edition](https://cdn.nsoftware.com/help/ITH/cs/)
-* [JavaScript Edition](https://cdn.nsoftware.com/help/ITH/js/)
-* [Python Edition](https://cdn.nsoftware.com/help/ITH/py/)
-* [PHP Edition](https://cdn.nsoftware.com/help/ITH/php/)
-* [C++ Edition](https://cdn.nsoftware.com/help/ITH/cpp/)
-* [Delphi Edition](https://cdn.nsoftware.com/help/ITH/dlp/)
-* [macOS Edition](https://cdn.nsoftware.com/help/ITH/mac/)
-* [iOS Edition](https://cdn.nsoftware.com/help/ITH/mac/)
+* [Java Edition](https://cdn.nsoftware.com/help/ITJ/java/)
+* [.NET Edition](https://cdn.nsoftware.com/help/ITJ/cs/)
+* [JavaScript Edition](https://cdn.nsoftware.com/help/ITJ/js/)
+* [Python Edition](https://cdn.nsoftware.com/help/ITJ/py/)
+* [PHP Edition](https://cdn.nsoftware.com/help/ITJ/php/)
+* [C++ Edition](https://cdn.nsoftware.com/help/ITJ/cpp/)
+* [Delphi Edition](https://cdn.nsoftware.com/help/ITJ/dlp/)
+* [macOS Edition](https://cdn.nsoftware.com/help/ITJ/mac/)
+* [iOS Edition](https://cdn.nsoftware.com/help/ITJ/mac/)
 
 ## Sample Projects
 | Sample Project | Description |

@@ -1,5 +1,5 @@
 (*
- * IPWorks MQ 2022 Delphi Edition - Sample Project
+ * IPWorks MQ 2024 Delphi Edition - Sample Project
  *
  * This sample project demonstrates the usage of IPWorks MQ in a 
  * simple, straightforward way. It is not intended to be a complete 
@@ -106,10 +106,10 @@ end;
 // Fetch a message
 procedure TFormAMQP.bFetchClick(Sender: TObject);
 begin
-  ipqAMQP1.FetchTimeout := 5;
+  ipqAMQP1.RetrieveTimeout := 5;
   Log('Fetching message...');
   try
-    ipqAMQP1.FetchMessage(tReceiver.Text)
+    ipqAMQP1.RetrieveMessage(tReceiver.Text)
   except
     on E: Exception do
     begin
@@ -176,7 +176,7 @@ begin
     Log('Created sender link: ' + tSender.Text);
     // Create receiver link
     if rFetch.Checked then
-      ipqAMQP1.ReceiveMode := TipqAMQPReceiveModes.rmFetch;
+      ipqAMQP1.ReceiveMode := TipqAMQPReceiveModes.rmRetrieve;
     ipqAMQP1.CreateReceiverLink(tSession.Text, tReceiver.Text, tTarget.Text);
     Log('Created receiver link: ' + tReceiver.Text);
     // Enable form components that work while connected
