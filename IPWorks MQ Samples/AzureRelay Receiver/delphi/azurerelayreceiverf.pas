@@ -40,13 +40,13 @@ type
       StatusCode: Integer;
       const Description: String
     );
-    procedure AzureRelayReceiver1SSLServerAuthentication(Sender: TObject;
-      CertEncoded: string; CertEncodedB: TArray<System.Byte>; const CertSubject,
-      CertIssuer, Status: string; var Accept: Boolean);
-    procedure AzureRelayReceiver1ConnectionDataIn(Sender: TObject;
-      ConnectionId, DataFormat: Integer; Text: string;
-      TextB: TArray<System.Byte>; EOM: Boolean);
     procedure Button2Click(Sender: TObject);
+    procedure AzureRelayReceiver1SSLServerAuthentication(Sender: TObject;
+      const CertEncoded: string; const CertEncodedB: TBytes; const CertSubject,
+      CertIssuer, Status: string; var Accept: Boolean);
+    procedure AzureRelayReceiver1ConnectionDataIn(Sender: TObject; ConnectionId,
+      DataFormat: Integer; const Text: string; const TextB: TBytes;
+      EOM: Boolean);
 
   private
     { Private declarations }
@@ -82,24 +82,17 @@ begin
   AzureRelayReceiver1.Listening := False;
 end;
 
-procedure TFormAzureRelayReceiver.AzureRelayReceiver1ConnectionDataIn(
-  Sender: TObject; ConnectionId, DataFormat: Integer; Text: string;
-  TextB: TArray<System.Byte>; EOM: Boolean);
-begin
-  txtLog.Lines.Add('Echoing "' +Text+ '" to ' + IntToStr(ConnectionId));
-  AzureRelayReceiver1.Send(ConnectionId, TextB);
-end;
-
-procedure TFormAzureRelayReceiver.AzureRelayReceiver1SSLServerAuthentication(
-  Sender: TObject; CertEncoded: string; CertEncodedB: TArray<System.Byte>;
-  const CertSubject, CertIssuer, Status: string; var Accept: Boolean);
-begin
-  Accept := True;
-end;
-
 procedure TFormAzureRelayReceiver.AzureRelayReceiver1ConnectionConnected(Sender: TObject; ConnectionId: Integer);
 begin
    txtLog.Lines.Add(IntToStr(ConnectionId) + ' connected.');
+end;
+
+procedure TFormAzureRelayReceiver.AzureRelayReceiver1ConnectionDataIn(
+  Sender: TObject; ConnectionId, DataFormat: Integer; const Text: string;
+  const TextB: TBytes; EOM: Boolean);
+begin
+  txtLog.Lines.Add('Echoing "' +Text+ '" to ' + IntToStr(ConnectionId));
+  AzureRelayReceiver1.Send(ConnectionId, TextB);
 end;
 
 procedure TFormAzureRelayReceiver.AzureRelayReceiver1ConnectionStatus(Sender: TObject; const ConnectionEvent: string; StatusCode: Integer; const Description: string);
@@ -107,6 +100,12 @@ begin
    txtLog.Lines.Add(ConnectionEvent);
 end;
 
-end.
+procedure TFormAzureRelayReceiver.AzureRelayReceiver1SSLServerAuthentication(
+  Sender: TObject; const CertEncoded: string; const CertEncodedB: TBytes;
+  const CertSubject, CertIssuer, Status: string; var Accept: Boolean);
+begin
+  Accept := True;
+end;
 
+end.
 

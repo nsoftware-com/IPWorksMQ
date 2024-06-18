@@ -98,6 +98,7 @@ object FormMQTT: TFormMQTT
       Top = 40
       Width = 121
       Height = 21
+      PasswordChar = '*'
       TabOrder = 3
     end
     object tConnectButton: TButton
@@ -305,6 +306,7 @@ object FormMQTT: TFormMQTT
     end
   end
   object ipqMQTT1: TipqMQTT
+    SSLAcceptServerCertStore = 'MY'
     SSLCertStore = 'MY'
     OnConnected = ipqMQTT1Connected
     OnConnectionStatus = ipqMQTT1ConnectionStatus

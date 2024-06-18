@@ -69,7 +69,7 @@ class MyAzurerelaysender : public AzureRelaySender
 	}
 
 	virtual int FireDataIn(AzureRelaySenderDataInEventParams* e) {
-		printf("Received %s: %s\r\n",e->Text);
+		printf("Received: %s\r\n",e->Text);
 		dataInReceived = true;
 		return 0;
 	}

@@ -31,11 +31,6 @@ type
     DisconnectButton: TButton;
     SendButton: TButton;
     procedure OnIdle(Sender: TObject; var Done: Boolean);
-    procedure AzureRelaySender1SSLServerAuthentication(Sender: TObject;
-      CertEncoded: string; CertEncodedB: TArray<System.Byte>; const CertSubject,
-      CertIssuer, Status: string; var Accept: Boolean);
-    procedure AzureRelaySender1DataIn(Sender: TObject; DataFormat: Integer;
-      Text: string; TextB: TArray<System.Byte>; EOM, EOL: Boolean);
     procedure AzureRelaySender1ConnectionStatus(Sender: TObject;
       const ConnectionEvent: string; StatusCode: Integer;
       const Description: string);
@@ -44,6 +39,11 @@ type
     procedure ConnectButtonClick(Sender: TObject);
     procedure DisconnectButtonClick(Sender: TObject);
     procedure SendButtonClick(Sender: TObject);
+    procedure AzureRelaySender1SSLServerAuthentication(Sender: TObject;
+      const CertEncoded: string; const CertEncodedB: TBytes; const CertSubject,
+      CertIssuer, Status: string; var Accept: Boolean);
+    procedure AzureRelaySender1DataIn(Sender: TObject; DataFormat: Integer;
+      const Text: string; const TextB: TBytes; EOM, EOL: Boolean);
   private
     { Private declarations }
   public
@@ -71,7 +71,8 @@ begin
 end;
 
 procedure TFormAzureRelaySender.AzureRelaySender1DataIn(Sender: TObject;
-  DataFormat: Integer; Text: string; TextB: TArray<System.Byte>; EOM, EOL: Boolean);
+  DataFormat: Integer; const Text: string; const TextB: TBytes; EOM,
+  EOL: Boolean);
 begin
   OutputBox.Lines.Add('Received ' + Text + ' from ' + AzureRelaySender1.HybridConnection);
 end;
@@ -83,7 +84,7 @@ begin
 end;
 
 procedure TFormAzureRelaySender.AzureRelaySender1SSLServerAuthentication(
-  Sender: TObject; CertEncoded: string; CertEncodedB: TArray<System.Byte>;
+  Sender: TObject; const CertEncoded: string; const CertEncodedB: TBytes;
   const CertSubject, CertIssuer, Status: string; var Accept: Boolean);
 begin
   if (not Accept) then
@@ -115,6 +116,5 @@ begin
 end;
 
 end.
-
 
 

@@ -75,8 +75,9 @@ type
       const MessageId: string; Direction, State: Integer);
     procedure cSSLClick(Sender: TObject);
     procedure ipqAMQP1SSLServerAuthentication(Sender: TObject;
-      CertEncoded: string; CertEncodedB: TArray<System.Byte>; const CertSubject, CertIssuer, Status: string;
-      var Accept: Boolean);
+      const CertEncoded: string; const CertEncodedB: TBytes; const CertSubject,
+      CertIssuer, Status: string; var Accept: Boolean);
+    
   private
     { Private declarations }
   public
@@ -249,9 +250,10 @@ begin
   end;
 end;
 
+
 procedure TFormAMQP.ipqAMQP1SSLServerAuthentication(Sender: TObject;
-  CertEncoded: string; CertEncodedB: TArray<System.Byte>; const CertSubject, CertIssuer, Status: string;
-  var Accept: Boolean);
+  const CertEncoded: string; const CertEncodedB: TBytes; const CertSubject,
+  CertIssuer, Status: string; var Accept: Boolean);
 begin
   Accept := True;
 end;

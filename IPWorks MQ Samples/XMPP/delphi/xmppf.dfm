@@ -74,6 +74,7 @@ object FormXmpp: TFormXmpp
     Top = 64
     Width = 121
     Height = 21
+    PasswordChar = '*'
     TabOrder = 1
   end
   object cbContacts: TComboBox
@@ -133,6 +134,7 @@ object FormXmpp: TFormXmpp
   object XMPP1: TipqXMPP
     AuthMethods = '*'
     Resource = 'IPWorks MQ XMPP Agent'
+    SSLAcceptServerCertStore = 'MY'
     SSLCertStore = 'MY'
     OnConnected = XMPP1Connected
     OnDisconnected = XMPP1Disconnected

@@ -79,12 +79,13 @@ type
       const Description: string);
     procedure ipqMQTT1Error(Sender: TObject; ErrorCode: Integer;
       const Description: string);
-    procedure ipqMQTT1MessageIn(Sender: TObject; PacketId: Integer;
-      const Topic: string; QOS: Integer; Message: string;
-      MessageB: TArray<System.Byte>; Retained, Duplicate: Boolean);
     procedure ipqMQTT1SSLServerAuthentication(Sender: TObject;
-      CertEncoded: string; CertEncodedB: TArray<System.Byte>; const CertSubject, CertIssuer, Status: string;
-      var Accept: Boolean);
+      const CertEncoded: string; const CertEncodedB: TBytes; const CertSubject,
+      CertIssuer, Status: string; var Accept: Boolean);
+    procedure ipqMQTT1MessageIn(Sender: TObject; PacketId: Integer;
+      const Topic: string; QOS: Integer; const Message: string;
+      const MessageB: TBytes; Retained, Duplicate: Boolean);
+    
   private
     { Private declarations }
   public
@@ -159,17 +160,17 @@ end;
 
 // Fires when a message arrives and logs the message
 procedure TFormMQTT.ipqMQTT1MessageIn(Sender: TObject; PacketId: Integer;
-  const Topic: string; QOS: Integer; Message: string;
-  MessageB: TArray<System.Byte>; Retained, Duplicate: Boolean);
+  const Topic: string; QOS: Integer; const Message: string;
+  const MessageB: TBytes; Retained, Duplicate: Boolean);
 begin
   Log('Message from <' + Topic + '> (QoS ' + inttostr(QOS) + '):');
   Log('    ' + Message);
 end;
 
 // Fires when authenticating an SSL connection
-procedure TFormMQTT.ipqMQTT1SSLServerAuthentication(Sender: TObject;
-  CertEncoded: string; CertEncodedB: TArray<System.Byte>; const CertSubject, CertIssuer, Status: string;
-  var Accept: Boolean);
+ procedure TFormMQTT.ipqMQTT1SSLServerAuthentication(Sender: TObject;
+  const CertEncoded: string; const CertEncodedB: TBytes; const CertSubject,
+  CertIssuer, Status: string; var Accept: Boolean);
 begin
   // Automatically accept certificate for demo purposes
   Accept := True;
@@ -322,4 +323,5 @@ begin
   tLog.Lines.Add(line);
 end;
 end.
+
 
