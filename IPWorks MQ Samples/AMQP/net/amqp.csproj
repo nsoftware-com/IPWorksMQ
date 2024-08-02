@@ -7,7 +7,5 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="amqp.cs" />
-    <Reference Include="nsoftware.IPWorksMQ">
-      <HintPath>..\..\lib\net6.0\nsoftware.IPWorksMQ.dll</HintPath>
-    </Reference>
+    <PackageReference Include="nsoftware.IPWorksMQ" Version="24.*" />
   </ItemGroup></Project>
